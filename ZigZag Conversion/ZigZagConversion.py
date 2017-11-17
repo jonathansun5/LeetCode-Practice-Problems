@@ -28,11 +28,11 @@ class Solution(object):
         result = []
         while line < numRows:
             array1 = s[line :: 2 * (numRows - 1)]
-            array2 = s[line + 2 * (numRows - line - 1) :: 2 * (numRows - 1)]
             # either top row or bottom row
             if line == 0 or line == numRows - 1:
                 result += array1
             else:
+                array2 = s[line + 2 * (numRows - line - 1) :: 2 * (numRows - 1)]
                 for i,v in enumerate(array2):
                     array1 = [str(r) for r in array1]
                     array1.insert(2 * i + 1,v)
